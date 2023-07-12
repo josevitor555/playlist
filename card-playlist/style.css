@@ -1,0 +1,758 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+::-webkit-scrollbar {
+    width: 0;
+}
+.container {
+    position: relative;
+    width: 360px;
+    height: 520px;
+    background: #F1F6F9;
+    border-radius: 12px;
+    overflow: hidden;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.container header {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+.container header .form button {
+    border: none;
+    background: none;
+    color: #8b8ba7;
+}
+.container header .form {
+    --timing: 0.3s;
+    --width-of-input: 200px;
+    --height-of-input: 40px;
+    --border-height: 2px;
+    --input-bg: #fff;
+    --border-color: #25e45e;
+    --border-radius: 30px;
+    --after-border-radius: 1px;
+    position: relative;
+    width: var(--width-of-input);
+    height: var(--height-of-input);
+    display: flex;
+    align-items: center;
+    padding-inline: 0.8em;
+    border-radius: var(--border-radius);
+    transition: border-radius 0.5s ease;
+    background: var(--input-bg,#fff);
+}
+.container header .input {
+    font-size: 0.9rem;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    padding-inline: 0.5em;
+    padding-block: 0.7em;
+    border: none;
+}
+.container header .form:before {
+    content: "";
+    position: absolute;
+    background: var(--border-color);
+    transform: scaleX(0);
+    transform-origin: center;
+    width: 100%;
+    height: var(--border-height);
+    left: 0;
+    bottom: 0;
+    border-radius: 1px;
+    transition: transform var(--timing) ease;
+}
+.container header .form:focus-within {
+    border-radius: var(--after-border-radius);
+}
+.container header input:focus {
+    outline: none;
+}
+.container header .form:focus-within:before {
+    transform: scale(1);
+}
+.container header .reset {
+    border: none;
+    background: none;
+    opacity: 0;
+    visibility: hidden;
+}
+.container header input:not(:placeholder-shown) ~ .reset {
+    opacity: 1;
+    visibility: visible;
+}
+.container header .form svg {
+    width: 17px;
+    margin-top: 3px;
+}
+.container header ul.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #43cf47;
+    border-radius: 12px;
+}
+.container header ul.menu li {
+    display: block;
+}
+.container header ul.menu li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.container header ul.menu li .fa-solid {
+    color: #47c64b;
+    margin-right: 8px;
+}
+.container header ul.menu li ul {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.container header ul.menu li ul li a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.container header ul.menu li ul li a:hover {
+    background: rgba(34, 50, 84, 0.03);
+}
+.container header ul.menu li:hover ul {
+    display: block;
+}
+.container header .active {
+    background-color: #4CAF50;
+}
+.container .public-playlist {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+.container .public-playlist li {
+    list-style: none;
+    width: 100%;
+    height: 60px;
+    background: #F1E5E5;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+.container .public-playlist li .info-msc {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.container .public-playlist li .info-msc .name-band-and-name-music {
+    width: 150px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 10px;
+}
+.container .public-playlist li .info-msc .cover-image#image-1 {
+    width: 80px;
+    height: 100%;
+    background: url("image-band/coldplay.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container .public-playlist li .info-msc .cover-image#image-1 .fa-solid {
+    font-size: 26px;
+    color: #fafafa;
+    cursor: pointer;
+}
+.container .public-playlist li .info-msc .cover-image#image-2 {
+    width: 80px;
+    height: 100%;
+    background: url("image-band/Gorillaz.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container .public-playlist li .info-msc .cover-image#image-2 .fa-solid {
+    font-size: 26px;
+    color: #fafafa;
+    cursor: pointer;
+}
+.container .public-playlist li .info-msc .cover-image#image-3 {
+    width: 80px;
+    height: 100%;
+    background: url("image-band/legião\ urbana.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container .public-playlist li .info-msc .cover-image#image-3 .fa-solid {
+    font-size: 26px;
+    color: #fafafa;
+    cursor: pointer;
+}
+.container .public-playlist li .info-msc .cover-image#image-4 {
+    width: 80px;
+    height: 100%;
+    background: url("image-band/Nirvana.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container .public-playlist li .info-msc .cover-image#image-4 .fa-solid {
+    font-size: 26px;
+    color: #fafafa;
+    cursor: pointer;
+}
+.container .public-playlist li .info-msc .cover-image#image-5 {
+    width: 80px;
+    height: 100%;
+    background: url("image-band/Pink\ Floyd.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container .public-playlist li .info-msc .cover-image#image-5 .fa-solid {
+    font-size: 26px;
+    color: #fafafa;
+    cursor: pointer;
+}
+.container .public-playlist li .info-msc .cover-image#image-6 {
+    width: 80px;
+    height: 100%;
+    background: url("image-band/queen.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container .public-playlist li .info-msc .cover-image#image-6 .fa-solid {
+    font-size: 26px;
+    color: #fafafa;
+    cursor: pointer;
+}
+.container .public-playlist li .info-msc .icons {
+    width: 100px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+.container .public-playlist li .info-msc .icons .con-like {
+    --red: rgb(40, 230, 81);
+    position: relative;
+    width: 22px;
+    height: 22px;
+}
+.container .public-playlist li .info-msc .icons .con-like .like {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 20;
+    cursor: pointer;
+}
+.container .public-playlist li .info-msc .icons .con-like .checkmark {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .public-playlist li .info-msc .icons .con-like .outline,
+  .con-like .filled {
+    fill: var(--red);
+    position: absolute;
+}
+.container .public-playlist li .info-msc .icons .con-like .filled {
+    animation: kfr-filled 0.5s;
+    display: none;
+}  
+.con-like .celebrate {
+    position: absolute;
+    animation: kfr-celebrate 0.5s;
+    animation-fill-mode: forwards;
+    display: none;
+}
+.con-like .poly {
+    stroke: var(--red);
+    fill: var(--red);
+}
+.container .public-playlist li .info-msc .icons .con-like .like:checked ~ .checkmark .filled {
+    display: block
+}
+.con-like .like:checked ~ .checkmark .celebrate {
+    display: block
+}
+@keyframes kfr-filled {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+}
+@keyframes kfr-celebrate {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(1.2);
+      opacity: 0;
+      display: none;
+    }
+}
+.container .public-playlist li .info-msc .icons .check-1 {
+    cursor: pointer;
+    position: relative;
+    margin: auto;
+    width: 18px;
+    height: 18px;
+    -webkit-tap-highlight-color: transparent;
+    transform: translate3d(0, 0, 0);
+}
+.container .public-playlist li .info-msc .icons .check-1:before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(34,50,84,0.03);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+.container .public-playlist li .info-msc .icons .check-1 svg {
+    position: relative;
+    z-index: 1;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #c8ccd4;
+    stroke-width: 1.5;
+    transform: translate3d(0, 0, 0);
+    transition: all 0.2s ease;
+}
+.container .public-playlist li .info-msc .icons .check-1 svg path {
+    stroke-dasharray: 60;
+    stroke-dashoffset: 0;
+}
+.container .public-playlist li .info-msc .icons .check-1 svg polyline {
+    stroke-dasharray: 22;
+    stroke-dashoffset: 66;
+}
+.container .public-playlist li .info-msc .icons .check-1:hover:before {
+    opacity: 1;
+}
+.container .public-playlist li .info-msc .icons .check-1:hover svg {
+    stroke: #27e847;
+}
+.container .public-playlist li .info-msc .icons #cbx-1:checked + .check-1 svg {
+    stroke: #27e847;
+}
+.container .public-playlist li .info-msc .icons #cbx-1:checked + .check-1 svg path {
+    stroke-dashoffset: 60;
+    transition: all 0.3s linear;
+}
+.container .public-playlist li .info-msc .icons #cbx-1:checked + .check-1 svg polyline {
+    stroke-dashoffset: 42;
+    transition: all 0.2s linear;
+    transition-delay: 0.15s;
+}
+.container .public-playlist li .info-msc .icons .check-2 {
+    cursor: pointer;
+    position: relative;
+    margin: auto;
+    width: 18px;
+    height: 18px;
+    -webkit-tap-highlight-color: transparent;
+    transform: translate3d(0, 0, 0);
+}
+.container .public-playlist li .info-msc .icons .check-2:before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(34,50,84,0.03);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+.container .public-playlist li .info-msc .icons .check-2 svg {
+    position: relative;
+    z-index: 1;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #c8ccd4;
+    stroke-width: 1.5;
+    transform: translate3d(0, 0, 0);
+    transition: all 0.2s ease;
+}
+.container .public-playlist li .info-msc .icons .check-2 svg path {
+    stroke-dasharray: 60;
+    stroke-dashoffset: 0;
+}
+.container .public-playlist li .info-msc .icons .check-2 svg polyline {
+    stroke-dasharray: 22;
+    stroke-dashoffset: 66;
+}
+.container .public-playlist li .info-msc .icons .check-2:hover:before {
+    opacity: 1;
+}
+.container .public-playlist li .info-msc .icons .check-2:hover svg {
+    stroke: #27e847;
+}
+.container .public-playlist li .info-msc .icons #cbx-2:checked + .check-2 svg {
+    stroke: #27e847;
+}  
+.container .public-playlist li .info-msc .icons #cbx-2:checked + .check-2 svg path {
+    stroke-dashoffset: 60;
+    transition: all 0.3s linear;
+}
+.container .public-playlist li .info-msc .icons #cbx-2:checked + .check-2 svg polyline {
+    stroke-dashoffset: 42;
+    transition: all 0.2s linear;
+    transition-delay: 0.15s;
+}
+.container .public-playlist li .info-msc .icons .check-3 {
+    cursor: pointer;
+    position: relative;
+    margin: auto;
+    width: 18px;
+    height: 18px;
+    -webkit-tap-highlight-color: transparent;
+    transform: translate3d(0, 0, 0);
+}
+.container .public-playlist li .info-msc .icons .check-3:before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(34,50,84,0.03);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+.container .public-playlist li .info-msc .icons .check-3 svg {
+    position: relative;
+    z-index: 1;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #c8ccd4;
+    stroke-width: 1.5;
+    transform: translate3d(0, 0, 0);
+    transition: all 0.2s ease;
+}
+.container .public-playlist li .info-msc .icons .check-3 svg path {
+    stroke-dasharray: 60;
+    stroke-dashoffset: 0;
+}
+.container .public-playlist li .info-msc .icons .check-3 svg polyline {
+    stroke-dasharray: 22;
+    stroke-dashoffset: 66;
+}
+.container .public-playlist li .info-msc .icons .check-3:hover:before {
+    opacity: 1;
+}
+.container .public-playlist li .info-msc .icons .check-3:hover svg {
+    stroke: #27e847;
+}
+.container .public-playlist li .info-msc .icons #cbx-3:checked + .check-3 svg {
+    stroke: #27e847;
+}  
+.container .public-playlist li .info-msc .icons #cbx-3:checked + .check-3 svg path {
+    stroke-dashoffset: 60;
+    transition: all 0.3s linear;
+}
+.container .public-playlist li .info-msc .icons #cbx-3:checked + .check-3 svg polyline {
+    stroke-dashoffset: 42;
+    transition: all 0.2s linear;
+    transition-delay: 0.15s;
+}
+.container .public-playlist li .info-msc .icons .check-4 {
+    cursor: pointer;
+    position: relative;
+    margin: auto;
+    width: 18px;
+    height: 18px;
+    -webkit-tap-highlight-color: transparent;
+    transform: translate3d(0, 0, 0);
+}
+.container .public-playlist li .info-msc .icons .check-4:before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(34,50,84,0.03);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+.container .public-playlist li .info-msc .icons .check-4 svg {
+    position: relative;
+    z-index: 1;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #c8ccd4;
+    stroke-width: 1.5;
+    transform: translate3d(0, 0, 0);
+    transition: all 0.2s ease;
+}
+.container .public-playlist li .info-msc .icons .check-4 svg path {
+    stroke-dasharray: 60;
+    stroke-dashoffset: 0;
+}
+.container .public-playlist li .info-msc .icons .check-4 svg polyline {
+    stroke-dasharray: 22;
+    stroke-dashoffset: 66;
+}
+.container .public-playlist li .info-msc .icons .check-4:hover:before {
+    opacity: 1;
+}
+.container .public-playlist li .info-msc .icons .check-4:hover svg {
+    stroke: #27e847;
+}
+.container .public-playlist li .info-msc .icons #cbx-4:checked + .check-4 svg {
+    stroke: #27e847;
+}  
+.container .public-playlist li .info-msc .icons #cbx-4:checked + .check-4 svg path {
+    stroke-dashoffset: 60;
+    transition: all 0.3s linear;
+}
+.container .public-playlist li .info-msc .icons #cbx-4:checked + .check-4 svg polyline {
+    stroke-dashoffset: 42;
+    transition: all 0.2s linear;
+    transition-delay: 0.15s;
+}
+.container .public-playlist li .info-msc .icons .check-5 {
+    cursor: pointer;
+    position: relative;
+    margin: auto;
+    width: 18px;
+    height: 18px;
+    -webkit-tap-highlight-color: transparent;
+    transform: translate3d(0, 0, 0);
+}
+.container .public-playlist li .info-msc .icons .check-5:before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(34,50,84,0.03);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+.container .public-playlist li .info-msc .icons .check-5 svg {
+    position: relative;
+    z-index: 1;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #c8ccd4;
+    stroke-width: 1.5;
+    transform: translate3d(0, 0, 0);
+    transition: all 0.2s ease;
+}
+.container .public-playlist li .info-msc .icons .check-5 svg path {
+    stroke-dasharray: 60;
+    stroke-dashoffset: 0;
+}
+.container .public-playlist li .info-msc .icons .check-5 svg polyline {
+    stroke-dasharray: 22;
+    stroke-dashoffset: 66;
+}
+.container .public-playlist li .info-msc .icons .check-5:hover:before {
+    opacity: 1;
+}
+.container .public-playlist li .info-msc .icons .check-5:hover svg {
+    stroke: #27e847;
+}
+.container .public-playlist li .info-msc .icons #cbx-5:checked + .check-5 svg {
+    stroke: #27e847;
+}  
+.container .public-playlist li .info-msc .icons #cbx-5:checked + .check-5 svg path {
+    stroke-dashoffset: 60;
+    transition: all 0.3s linear;
+}
+.container .public-playlist li .info-msc .icons #cbx-5:checked + .check-5 svg polyline {
+    stroke-dashoffset: 42;
+    transition: all 0.2s linear;
+    transition-delay: 0.15s;
+}
+.container .public-playlist li .info-msc .icons .check-6 {
+    cursor: pointer;
+    position: relative;
+    margin: auto;
+    width: 18px;
+    height: 18px;
+    -webkit-tap-highlight-color: transparent;
+    transform: translate3d(0, 0, 0);
+}
+.container .public-playlist li .info-msc .icons .check-6:before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(34,50,84,0.03);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+.container .public-playlist li .info-msc .icons .check-6 svg {
+    position: relative;
+    z-index: 1;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #c8ccd4;
+    stroke-width: 1.5;
+    transform: translate3d(0, 0, 0);
+    transition: all 0.2s ease;
+}
+.container .public-playlist li .info-msc .icons .check-6 svg path {
+    stroke-dasharray: 60;
+    stroke-dashoffset: 0;
+}
+.container .public-playlist li .info-msc .icons .check-6 svg polyline {
+    stroke-dasharray: 22;
+    stroke-dashoffset: 66;
+}
+.container .public-playlist li .info-msc .icons .check-6:hover:before {
+    opacity: 1;
+}
+.container .public-playlist li .info-msc .icons .check-6:hover svg {
+    stroke: #27e847;
+}
+.container .public-playlist li .info-msc .icons #cbx-6:checked + .check-6 svg {
+    stroke: #27e847;
+}  
+.container .public-playlist li .info-msc .icons #cbx-6:checked + .check-6 svg path {
+    stroke-dashoffset: 60;
+    transition: all 0.3s linear;
+}
+.container .public-playlist li .info-msc .icons #cbx-6:checked + .check-6 svg polyline {
+    stroke-dashoffset: 42;
+    transition: all 0.2s linear;
+    transition-delay: 0.15s;
+}
+.container .public-playlist li .info-msc .icons .check-6 {
+    cursor: pointer;
+    position: relative;
+    margin: auto;
+    width: 18px;
+    height: 18px;
+    -webkit-tap-highlight-color: transparent;
+    transform: translate3d(0, 0, 0);
+}
+.container .public-playlist li .info-msc .icons .check-5:before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(34,50,84,0.03);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+.container .public-playlist li .info-msc .icons .check-5 svg {
+    position: relative;
+    z-index: 1;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #c8ccd4;
+    stroke-width: 1.5;
+    transform: translate3d(0, 0, 0);
+    transition: all 0.2s ease;
+}
+.container .public-playlist li .info-msc .icons .check-5 svg path {
+    stroke-dasharray: 60;
+    stroke-dashoffset: 0;
+}
+.container .public-playlist li .info-msc .icons .check-5 svg polyline {
+    stroke-dasharray: 22;
+    stroke-dashoffset: 66;
+}
+.container .public-playlist li .info-msc .icons .check-5:hover:before {
+    opacity: 1;
+}
+.container .public-playlist li .info-msc .icons .check-5:hover svg {
+    stroke: #27e847;
+}
+.container .public-playlist li .info-msc .icons #cbx-5:checked + .check-5 svg {
+    stroke: #27e847;
+}  
+.container .public-playlist li .info-msc .icons #cbx-5:checked + .check-5 svg path {
+    stroke-dashoffset: 60;
+    transition: all 0.3s linear;
+}
+.container .public-playlist li .info-msc .icons #cbx-5:checked + .check-5 svg polyline {
+    stroke-dashoffset: 42;
+    transition: all 0.2s linear;
+    transition-delay: 0.15s;
+}
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #d1d5d7;
+}
